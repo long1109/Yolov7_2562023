@@ -81,7 +81,8 @@ def test(data,
     # Logging
     log_imgs = 0
     if wandb_logger and wandb_logger.wandb:
-        log_imgs = min(wandb_logger.log_imgs, 100)
+        #log_imgs = min(wandb_logger.log_imgs, 100)
+        log_imgs = 0 if wandb_logger is None else min(getattr(wandb_logger, 'log_imgs', 0), 100)
     # Dataloader
     if not training:
         if device.type != 'cpu':
