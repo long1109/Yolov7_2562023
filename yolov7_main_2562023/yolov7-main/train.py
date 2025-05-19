@@ -528,7 +528,7 @@ def train(hyp, opt, device, tb_writer=None):
                                             # name = 'run_' + (wandb_logger.wandb_run.id if (wandb_logger and wandb_logger.wandb_run) else 'unknown') + '_model',
                                             # aliases=['last', 'best', 'stripped'])
         # wandb_logger.finish_run()
-        print(f"�� train xong model, luu model t?i: {final}")
+        print(f"Đã train xong model, lưu model tại: {final}")
     else:
         dist.destroy_process_group()
     torch.cuda.empty_cache()
